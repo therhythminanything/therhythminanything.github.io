@@ -8,15 +8,21 @@
         td, th { border: 1px solid #ccc; padding: 10px; text-align: center; }
         img { max-width: 200px; height: auto; }
         audio { width: 100%; }
+        .header-divider { border-bottom: 3px solid #000; }
     </style>
 </head>
 <body>
 
 
-<h1>Tapping (TapTamDrum Dataset)</h1>
+<h1>TRIA Audio Supplement</h1>
+
+<p>Below, we provide examples of the proposed TRIA and baseline MelodyFlow systems converting sound gestures to drum recordings. Given a <b>timbre prompt</b> specifying the desired drum sound (an audio recording for TRIA, a text description for MelodyFlow) and a <b>rhythm prompt</b> specifying the desired rhythm, we present the outputs of the proposed and baseline systems. In the corresponding plots, timbre is illustrated by a spectrogram (top) and rhythm is illustrated by dualized rhythm features (bottom). In each row, the rhythm prompt is fixed across all evaluated systems, the audio timbre prompt is fixed across all TRIA variants, and the text timbre prompt is fixed across all MelodyFlow variants. Audio and text timbre prompts are sampled independently and are not meant to correspond.</p>
+
+    
+<h2>Tapping (TapTamDrum Dataset) to Drums</h2>
 
 <table>
-<tr><th>Index</th><th>Timbre prompt</th><th>Rhythm prompt</th><th>TRIA (2 bands)</th><th>TRIA (2 bands, non-adaptive)</th><th>TRIA (1 band)</th><th>TRIA (3 bands)</th><th>TRIA (4 bands)</th><th>Timbre prompt (text)</th><th>MelodyFlow (timestep = 0.0)</th><th>MelodyFlow (timestep = 0.1)</th><th>MelodyFlow (timestep = 0.2)</th></tr>
+<tr class='header-divider'><th>Index</th><th>Timbre prompt</th><th>Rhythm prompt</th><th>TRIA (2 bands)</th><th>TRIA (2 bands, non-adaptive)</th><th>TRIA (1 band)</th><th>TRIA (3 bands)</th><th>TRIA (4 bands)</th><th>Timbre prompt (text)</th><th>MelodyFlow (timestep = 0.0)</th><th>MelodyFlow (timestep = 0.1)</th><th>MelodyFlow (timestep = 0.2)</th></tr>
 <tr><td rowspan='2'>1</td><td><img src='timbre_prompt_fig/43.png'></td><td><img src='rhythm_prompt_fig/43.png'></td><td><img src='tria_2b_fig/43.png'></td><td><img src='tria_2b_na_fig/43.png'></td><td><img src='tria_1b_fig/43.png'></td><td><img src='tria_3b_fig/43.png'></td><td><img src='tria_4b_fig/43.png'></td><td>spacious, reverberant acoustic drum set</td><td><img src='melodyflow_00_fig/43.png'></td><td><img src='melodyflow_01_fig/43.png'></td><td><img src='melodyflow_02_fig/43.png'></td></tr>
 <tr><td><audio controls src='timbre_prompt/43.wav'></audio></td><td><audio controls src='rhythm_prompt/43.wav'></audio></td><td><audio controls src='tria_2b/43.wav'></audio></td><td><audio controls src='tria_2b_na/43.wav'></audio></td><td><audio controls src='tria_1b/43.wav'></audio></td><td><audio controls src='tria_3b/43.wav'></audio></td><td><audio controls src='tria_4b/43.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/43.wav'></audio></td><td><audio controls src='melodyflow_01/43.wav'></audio></td><td><audio controls src='melodyflow_02/43.wav'></audio></td></tr>
 <tr><td rowspan='2'>2</td><td><img src='timbre_prompt_fig/70.png'></td><td><img src='rhythm_prompt_fig/70.png'></td><td><img src='tria_2b_fig/70.png'></td><td><img src='tria_2b_na_fig/70.png'></td><td><img src='tria_1b_fig/70.png'></td><td><img src='tria_3b_fig/70.png'></td><td><img src='tria_4b_fig/70.png'></td><td>balanced, neutral acoustic drum timbre</td><td><img src='melodyflow_00_fig/70.png'></td><td><img src='melodyflow_01_fig/70.png'></td><td><img src='melodyflow_02_fig/70.png'></td></tr>
@@ -30,10 +36,10 @@
 </table>
 
 
-<h1>Beatboxing (AVP Dataset)</h1>
+<h2>Beatboxing (AVP Dataset) to Drums</h2>
     
 <table>
-<tr><th>Index</th><th>Timbre prompt</th><th>Rhythm prompt</th><th>TRIA (2 bands)</th><th>TRIA (2 bands, non-adaptive)</th><th>TRIA (1 band)</th><th>TRIA (3 bands)</th><th>TRIA (4 bands)</th><th>Timbre prompt (text)</th><th>MelodyFlow (timestep = 0.0)</th><th>MelodyFlow (timestep = 0.1)</th><th>MelodyFlow (timestep = 0.2)</th></tr>
+<tr class='header-divider'><th>Index</th><th>Timbre prompt</th><th>Rhythm prompt</th><th>TRIA (2 bands)</th><th>TRIA (2 bands, non-adaptive)</th><th>TRIA (1 band)</th><th>TRIA (3 bands)</th><th>TRIA (4 bands)</th><th>Timbre prompt (text)</th><th>MelodyFlow (timestep = 0.0)</th><th>MelodyFlow (timestep = 0.1)</th><th>MelodyFlow (timestep = 0.2)</th></tr>
 <tr><td rowspan='2'>1</td><td><img src='timbre_prompt_fig/320.png'></td><td><img src='rhythm_prompt_fig/320.png'></td><td><img src='tria_2b_fig/320.png'></td><td><img src='tria_2b_na_fig/320.png'></td><td><img src='tria_1b_fig/320.png'></td><td><img src='tria_3b_fig/320.png'></td><td><img src='tria_4b_fig/320.png'></td><td>rounded, organic electronic drums</td><td><img src='melodyflow_00_fig/320.png'></td><td><img src='melodyflow_01_fig/320.png'></td><td><img src='melodyflow_02_fig/320.png'></td></tr>
 <tr><td><audio controls src='timbre_prompt/320.wav'></audio></td><td><audio controls src='rhythm_prompt/320.wav'></audio></td><td><audio controls src='tria_2b/320.wav'></audio></td><td><audio controls src='tria_2b_na/320.wav'></audio></td><td><audio controls src='tria_1b/320.wav'></audio></td><td><audio controls src='tria_3b/320.wav'></audio></td><td><audio controls src='tria_4b/320.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/320.wav'></audio></td><td><audio controls src='melodyflow_01/320.wav'></audio></td><td><audio controls src='melodyflow_02/320.wav'></audio></td></tr>
 <tr><td rowspan='2'>2</td><td><img src='timbre_prompt_fig/296.png'></td><td><img src='rhythm_prompt_fig/296.png'></td><td><img src='tria_2b_fig/296.png'></td><td><img src='tria_2b_na_fig/296.png'></td><td><img src='tria_1b_fig/296.png'></td><td><img src='tria_3b_fig/296.png'></td><td><img src='tria_4b_fig/296.png'></td><td>subtle, understated acoustic drums</td><td><img src='melodyflow_00_fig/296.png'></td><td><img src='melodyflow_01_fig/296.png'></td><td><img src='melodyflow_02_fig/296.png'></td></tr>
@@ -48,7 +54,83 @@
 
 
 
+<h2>Text Timbre Prompts</h2>
 
+
+<p>Below, we provide the 50 text timbre prompts used for our objective evaluation, and the 8 text timbre prompts used for our subjective evaluation.</p>
+    
+
+<h3>Objective Evaluation</h3>
+
+<p>Timbre prompts were generated using GPT-4.5 with the following prompt: "Generate 50 short descriptions of the timbre of a drum kit recording. The drum kit may be acoustic or electric, natural or synthetic. Each description should be formatted as a short sentence or phrase, e.g. "a crisp, bright acoustic drum kit". Try to make each description distinct."</p>
+
+<ul>
+  <li>a crisp, bright acoustic drum kit</li>
+  <li>deep, resonant acoustic drums with warm sustain</li>
+  <li>punchy, tight electronic drum samples</li>
+  <li>raw, gritty analog-sounding drum machine</li>
+  <li>smooth, polished synthetic drum textures</li>
+  <li>lo-fi, vintage-sounding acoustic drums</li>
+  <li>sharp, metallic electronic percussion</li>
+  <li>organic, mellow acoustic kit with rich tones</li>
+  <li>dark, muted acoustic drum tones</li>
+  <li>snappy, modern electro-acoustic hybrid kit</li>
+  <li>dense, compressed electronic drum timbres</li>
+  <li>roomy, ambient acoustic drums with natural decay</li>
+  <li>dry, minimalistic electronic drum kit</li>
+  <li>saturated, retro synthetic drum sounds</li>
+  <li>thumping, powerful acoustic kick and snare</li>
+  <li>crisp, synthetic drums with airy highs</li>
+  <li>warm, round acoustic drums with gentle attack</li>
+  <li>bright, glassy-sounding electronic percussion</li>
+  <li>heavy, aggressive acoustic drum presence</li>
+  <li>clear, transparent electronic drum timbres</li>
+  <li>soft, brushed acoustic kit with intimate texture</li>
+  <li>harsh, industrial electronic drum aesthetics</li>
+  <li>balanced, neutral acoustic drum timbre</li>
+  <li>vibrant, digital drum sounds with fast decay</li>
+  <li>rich, woody-sounding acoustic kit</li>
+  <li>synthetic, futuristic drum textures with sharp transients</li>
+  <li>thick, bass-heavy electronic percussion</li>
+  <li>subtle, understated acoustic drums</li>
+  <li>metallic, bell-like synthetic drum hits</li>
+  <li>warm, analog electronic drum sounds</li>
+  <li>airy, open acoustic drum recording</li>
+  <li>heavy, punchy synthetic kick and snare</li>
+  <li>dull, subdued acoustic kit with lo-fi charm</li>
+  <li>shimmering, high-frequency electronic percussion</li>
+  <li>rounded, organic electronic drums</li>
+  <li>tight, controlled acoustic drum tones</li>
+  <li>crisp, biting electronic drum samples</li>
+  <li>spacious, reverberant acoustic drum set</li>
+  <li>coarse, gritty synthetic drum textures</li>
+  <li>clean, precise digital percussion</li>
+  <li>raw, unprocessed acoustic drum tones</li>
+  <li>hypnotic, rhythmic electronic drum grooves</li>
+  <li>naturalistic, earthy acoustic drums</li>
+  <li>synthetic drums with icy, crystalline clarity</li>
+  <li>boomy, cavernous acoustic drum ambience</li>
+  <li>slick, polished electronic drum production</li>
+  <li>dry, vintage-inspired acoustic kit recording</li>
+  <li>metallic, edgy synthetic percussion sounds</li>
+  <li>lush, saturated electronic drum timbre</li>
+  <li>gentle, soft acoustic drums with airy resonance</li>
+</ul>
+
+<h3>Subjective Evaluation</h3>
+
+<p>Timbre prompts describing acoustic drum kits were selected from the above set.</p>
+
+<ul>
+    <li>a crisp, bright acoustic drum kit</li>
+    <li>deep, resonant acoustic drums with warm sustain</li>
+    <li>organic, mellow acoustic kit with rich tones</li>
+    <li>dark, muted acoustic drum tones</li>
+    <li>roomy, ambient acoustic drums with natural decay</li>
+    <li>thumping, powerful acoustic kick and snare</li>
+    <li>warm, round acoustic drums with gentle attack</li>
+    <li>heavy, aggressive acoustic drum presence</li>
+</ul>
 
 
 </body></html>
