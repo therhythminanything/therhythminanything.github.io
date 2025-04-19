@@ -10,50 +10,237 @@
         audio { width: 100%; }
         .header-divider { border-bottom: 3px solid #000; }
     </style>
+    
+    <style>
+        .rhythm-cell {
+          background-color: #e9fbe9;
+        }
+        .timbre-cell {
+          background-color: #e9f3fb;
+        }
+        th.left-divider {
+          border-left: 4px solid black;
+        }
+        th > div {
+          line-height: 1.2;
+        }
+        th i {
+          font-weight: normal;
+          display: block;
+          margin-top: 2px;
+        }
+        td.left-divider {
+          border-left: 4px solid black;
+        }
+        td.timbre-text-wide {
+          min-width: 220px;
+        }
+      </style>
+
+    <style>
+        .image-scaler {
+          display: flex;
+          justify-content: center;
+          padding: 1rem 0;
+          transform: scale(4.0);            /* scale as desired */
+          transform-origin: top center;
+          margin-bottom: calc(1934px * 0.2);
+          /*padding-bottom: 6rem; */
+        }
+                
+        .image-container {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .image-container img {
+          display: block;                   /* Don't stretch or shrink */
+          width: auto;
+          height: auto;
+        }
+        
+        .hotspot {
+          position: absolute;
+          cursor: pointer;
+          /*background-color: rgba(255, 0, 0, 0.2);*/
+        }
+    
+        /* Example hotspots */
+        .region1  { top: 4.96%;  left: 31.2%;  width: 33.7%;  height: 23.0%; }
+        .region2  { top: 4.96%;  left: 66.8%;  width: 33.1%;  height: 23.5%; }
+        .region3  { top: 36.2%;  left: 17.1%;  width: 13.3%;  height: 21.1%; }
+        .region4  { top: 58.0%;  left: 17.3%;  width: 13.2%;  height: 20.6%; }
+        .region5  { top: 79.8%;  left: 17.4%;  width: 13.1%;  height: 20.1%; }
+        .region6  { top: 35.6%;  left: 31.5%;  width: 33.2%;  height: 21.9%; }
+        .region7  { top: 58.0%;  left: 31.4%;  width: 33.3%;  height: 20.8%; }
+        .region8  { top: 79.7%;  left: 31.5%;  width: 33.3%;  height: 20.1%; }
+        .region9  { top: 35.5%;  left: 66.3%;  width: 33.4%;  height: 21.6%; }
+        .region10 { top: 57.6%;  left: 66.3%;  width: 33.4%;  height: 21.1%; }
+        .region11 { top: 79.7%;  left: 66.4%;  width: 33.3%;  height: 20.1%; }
+
+    </style>
+    
 </head>
 <body>
 
-
 <h1>TRIA Audio Supplement</h1>
 
+<br/>
+<h2>Comparisons vs. MelodyFlow</h2>
+    
+Below, we provide examples of the proposed TRIA and baseline MelodyFlow systems converting sound gestures to drum recordings. For these examples, we craft text timbre prompts for MelodyFlow that broadly correspond to TRIA's audio timbre prompts; this is because while TRIA allows timbre specification via an audio example, MelodyFlow requires a text description of the desired timbre. For TRIA, we use the 2-band adaptive variant detailed in the paper, while for MelodyFlow, we use target timestep 0.2.
+    
+<br/>
+<br/>
+
+<table>
+<tr class='header-divider'>
+  <th>Index</th>
+  <th class="timbre-cell"><div>Timbre prompt<br><i>Use this drum sound...</i></div></th>
+  <th class="rhythm-cell"><div>Rhythm prompt<br><i>Play this rhythm...</i></div></th>
+  <th>TRIA</th>
+  <th class="left-divider timbre-cell"><div>Timbre prompt (text)<br><i>Use this drum sound...</i></div></th>
+  <th class="rhythm-cell"><div>Rhythm prompt<br><i>Play this rhythm...</i></div></th>
+  <th>MelodyFlow</th>
+</tr>
+
+<tr><td rowspan='2'>1</td><td class="timbre-cell"><img src='hero/timbre-prompt-1.png'></td><td class="rhythm-cell"><img src='hero/rhythm-prompt-1.png'></td><td><img src='hero/tria-1.png'></td></td><td class="left-divider timbre-cell timbre-text-wide">a loud, acoustic, rock drumkit</td><td class="rhythm-cell"><img src='hero/rhythm-prompt-1.png'></td><td><img src='hero/melodyflow-1.png'></tr>
+<tr><td class="timbre-cell"><audio controls src='hero/timbre-prompt-1.wav'></audio></td><td class="rhythm-cell"><audio controls src='hero/rhythm-prompt-1.wav'></audio></td><td><audio controls src='hero/tria-1.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='hero/rhythm-prompt-1.wav'></audio></td><td><audio controls src='hero/melodyflow-1.wav'></audio></td></tr>
+
+<tr><td rowspan='2'>2</td><td class="timbre-cell"><img src='hero/timbre-prompt-2.png'></td><td class="rhythm-cell"><img src='hero/rhythm-prompt-2.png'></td><td><img src='hero/tria-2.png'></td></td><td class="left-divider timbre-cell timbre-text-wide">an acoustic drumkit with kick, snare, hi-hat, and crash cymbal</td><td class="rhythm-cell"><img src='hero/rhythm-prompt-2.png'></td><td><img src='hero/melodyflow-2.png'></tr>
+<tr><td class="timbre-cell"><audio controls src='hero/timbre-prompt-2.wav'></audio></td><td class="rhythm-cell"><audio controls src='hero/rhythm-prompt-2.wav'></audio></td><td><audio controls src='hero/tria-2.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='hero/rhythm-prompt-2.wav'></audio></td><td><audio controls src='hero/melodyflow-2.wav'></audio></td></tr>
+
+<tr><td rowspan='2'>3</td><td class="timbre-cell"><img src='hero/timbre-prompt-3.png'></td><td class="rhythm-cell"><img src='hero/rhythm-prompt-3.png'></td><td><img src='hero/tria-3.png'></td></td><td class="left-divider timbre-cell timbre-text-wide">a deep, muted, underwater electronic drumkit</td><td class="rhythm-cell"><img src='hero/rhythm-prompt-3.png'></td><td><img src='hero/melodyflow-3.png'></tr>
+<tr><td class="timbre-cell"><audio controls src='hero/timbre-prompt-3.wav'></audio></td><td class="rhythm-cell"><audio controls src='hero/rhythm-prompt-3.wav'></audio></td><td><audio controls src='hero/tria-3.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='hero/rhythm-prompt-3.wav'></audio></td><td><audio controls src='hero/melodyflow-3.wav'></audio></td></tr>
+
+</table>
+
+
+<br/>
+<h2>Figure 4</h2>
+
+<p>Below, we provide audio examples for the proposed TRIA and baseline MelodyFlow systems corresponding to Figure 4 in the paper. For TRIA, we use the 2-band adaptive variant detailed in the paper, while for MelodyFlow, we use target timestep 0.2.</p>
+
+<p>We start with a beatboxing rhythm prompt consisting of alternating "kick" and "snare" vocalizations. We then construct three audio timbre prompts for TRIA, each containing the same synthesized kick drum and one additional percussive element: a "bongo," a "wood crack," or a "noise burst." Notably, while TRIA's training data is dominated by traditional drum kit elements such as snare and hi-hat, we choose percussive sounds that are represented sparsely or not at all. For MelodyFlow, we use the aforementioned descriptors ("bongo," "wood crack," "noise burst") as text timbre prompts. </p>
+
+<p>TRIA successfully maps each timbre prompt onto the beatbox rhythm prompt by replacing "kick" vocalizations with a kick drum timbre and replacing "snare" vocalizations with the corresponding percussive element. This indicates that TRIA can distinguish between kick/snare vocalizations and select appropriate sound elements from within the timbre prompt to map onto these vocalizations. By contrast, MelodyFlow adheres much more closely to the spectral structure of the rhythm prompt rather than replacing the input vocalizations with the text-specified percussive elements (i.e. the output recordings still "sound like" beatboxing), indicating timbre leakage. While using a lower target timestep hyperparameter lessens leakage (see "Ablations" below), this results in poor adherence to the rhythm prompt.</p>
+
+<br/>
+<div style="text-align: center;">
+  <p style="color: red;"><b>Click on the spectrograms below to hear each audio clip.</b></p>
+</div>
+
+<div class="image-scaler">
+  <div class="image-container">
+    <img src="figure_4/uberfigure_lowres.png" alt="Interactive Image">
+
+    <div class="hotspot region1" onclick="playAudio('audiorhythmprompt')"></div>
+    <div class="hotspot region2" onclick="playAudio('audiorhythmprompt')"></div>
+    <div class="hotspot region3" onclick="playAudio('audiobongotimbre')"></div>
+    <div class="hotspot region4" onclick="playAudio('audiowoodtimbre')"></div>
+    <div class="hotspot region5" onclick="playAudio('audionoisetimbre')"></div>
+    <div class="hotspot region6" onclick="playAudio('audiobongotria')"></div>
+    <div class="hotspot region7" onclick="playAudio('audiowoodtria')"></div>
+    <div class="hotspot region8" onclick="playAudio('audionoisetria')"></div>
+    <div class="hotspot region9" onclick="playAudio('audiobongomf')"></div>
+    <div class="hotspot region10" onclick="playAudio('audiowoodmf')"></div>
+    <div class="hotspot region11" onclick="playAudio('audionoisemf')"></div>
+  </div>
+</div>
+
+
+<audio id="audiorhythmprompt" src="figure_4/rhythm_prompt.wav"></audio>
+<audio id="audiobongotimbre" src="figure_4/bongo-in.wav"></audio>
+<audio id="audiowoodtimbre" src="figure_4/woodcracks-in.wav"></audio>
+<audio id="audionoisetimbre" src="figure_4/noise-in.wav"></audio>
+<audio id="audiobongotria" src="figure_4/tria-bongo-out.wav"></audio>
+<audio id="audiowoodtria" src="figure_4/tria-woodcracks-out.wav"></audio>
+<audio id="audionoisetria" src="figure_4/tria-noise-out.wav"></audio>
+<audio id="audiobongomf" src="figure_4/melodyflow-bongo-out.wav"></audio>
+<audio id="audiowoodmf" src="figure_4/melodyflow-woodcracks-out.wav"></audio>
+<audio id="audionoisemf" src="figure_4/melodyflow-noise-out.wav"></audio>
+
+
+<script>
+  function playAudio(id) {
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(a => a.pause()); // stop any currently playing
+    const audio = document.getElementById(id);
+    audio.currentTime = 0;
+    audio.play();
+  }
+</script>
+
+    
+<br/>
+<h2>Ablations</h2>
+    
 <p>Below, we provide examples of the proposed TRIA and baseline MelodyFlow systems converting sound gestures to drum recordings. Given a <b>timbre prompt</b> specifying the desired drum sound (an audio recording for TRIA, a text description for MelodyFlow) and a <b>rhythm prompt</b> specifying the desired rhythm, we present the outputs of the proposed and baseline systems. In the corresponding plots, timbre is illustrated by a spectrogram (top) and rhythm is illustrated by dualized rhythm features (bottom). In each row, the rhythm prompt is fixed across all evaluated systems, the audio timbre prompt is fixed across all TRIA variants, and the text timbre prompt is fixed across all MelodyFlow variants. Audio and text timbre prompts are sampled independently and are not meant to correspond.</p>
 
-    
-<h2>Tapping (TapTamDrum Dataset) to Drums</h2>
+<br/>
+<h3>Tapping (TapTamDrum Dataset) to Drums</h3>
 
 <table>
-<tr class='header-divider'><th>Index</th><th>Timbre prompt</th><th>Rhythm prompt</th><th>TRIA (2 bands)</th><th>TRIA (2 bands, non-adaptive)</th><th>TRIA (1 band)</th><th>TRIA (3 bands)</th><th>TRIA (4 bands)</th><th>Timbre prompt (text)</th><th>MelodyFlow (timestep = 0.0)</th><th>MelodyFlow (timestep = 0.1)</th><th>MelodyFlow (timestep = 0.2)</th></tr>
-<tr><td rowspan='2'>1</td><td><img src='timbre_prompt_fig/43.png'></td><td><img src='rhythm_prompt_fig/43.png'></td><td><img src='tria_2b_fig/43.png'></td><td><img src='tria_2b_na_fig/43.png'></td><td><img src='tria_1b_fig/43.png'></td><td><img src='tria_3b_fig/43.png'></td><td><img src='tria_4b_fig/43.png'></td><td>spacious, reverberant acoustic drum set</td><td><img src='melodyflow_00_fig/43.png'></td><td><img src='melodyflow_01_fig/43.png'></td><td><img src='melodyflow_02_fig/43.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/43.wav'></audio></td><td><audio controls src='rhythm_prompt/43.wav'></audio></td><td><audio controls src='tria_2b/43.wav'></audio></td><td><audio controls src='tria_2b_na/43.wav'></audio></td><td><audio controls src='tria_1b/43.wav'></audio></td><td><audio controls src='tria_3b/43.wav'></audio></td><td><audio controls src='tria_4b/43.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/43.wav'></audio></td><td><audio controls src='melodyflow_01/43.wav'></audio></td><td><audio controls src='melodyflow_02/43.wav'></audio></td></tr>
-<tr><td rowspan='2'>2</td><td><img src='timbre_prompt_fig/70.png'></td><td><img src='rhythm_prompt_fig/70.png'></td><td><img src='tria_2b_fig/70.png'></td><td><img src='tria_2b_na_fig/70.png'></td><td><img src='tria_1b_fig/70.png'></td><td><img src='tria_3b_fig/70.png'></td><td><img src='tria_4b_fig/70.png'></td><td>balanced, neutral acoustic drum timbre</td><td><img src='melodyflow_00_fig/70.png'></td><td><img src='melodyflow_01_fig/70.png'></td><td><img src='melodyflow_02_fig/70.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/70.wav'></audio></td><td><audio controls src='rhythm_prompt/70.wav'></audio></td><td><audio controls src='tria_2b/70.wav'></audio></td><td><audio controls src='tria_2b_na/70.wav'></audio></td><td><audio controls src='tria_1b/70.wav'></audio></td><td><audio controls src='tria_3b/70.wav'></audio></td><td><audio controls src='tria_4b/70.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/70.wav'></audio></td><td><audio controls src='melodyflow_01/70.wav'></audio></td><td><audio controls src='melodyflow_02/70.wav'></audio></td></tr>
-<tr><td rowspan='2'>3</td><td><img src='timbre_prompt_fig/78.png'></td><td><img src='rhythm_prompt_fig/78.png'></td><td><img src='tria_2b_fig/78.png'></td><td><img src='tria_2b_na_fig/78.png'></td><td><img src='tria_1b_fig/78.png'></td><td><img src='tria_3b_fig/78.png'></td><td><img src='tria_4b_fig/78.png'></td><td>smooth, polished synthetic drum textures</td><td><img src='melodyflow_00_fig/78.png'></td><td><img src='melodyflow_01_fig/78.png'></td><td><img src='melodyflow_02_fig/78.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/78.wav'></audio></td><td><audio controls src='rhythm_prompt/78.wav'></audio></td><td><audio controls src='tria_2b/78.wav'></audio></td><td><audio controls src='tria_2b_na/78.wav'></audio></td><td><audio controls src='tria_1b/78.wav'></audio></td><td><audio controls src='tria_3b/78.wav'></audio></td><td><audio controls src='tria_4b/78.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/78.wav'></audio></td><td><audio controls src='melodyflow_01/78.wav'></audio></td><td><audio controls src='melodyflow_02/78.wav'></audio></td></tr>
-<tr><td rowspan='2'>4</td><td><img src='timbre_prompt_fig/15.png'></td><td><img src='rhythm_prompt_fig/15.png'></td><td><img src='tria_2b_fig/15.png'></td><td><img src='tria_2b_na_fig/15.png'></td><td><img src='tria_1b_fig/15.png'></td><td><img src='tria_3b_fig/15.png'></td><td><img src='tria_4b_fig/15.png'></td><td>vibrant, digital drum sounds with fast decay</td><td><img src='melodyflow_00_fig/15.png'></td><td><img src='melodyflow_01_fig/15.png'></td><td><img src='melodyflow_02_fig/15.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/15.wav'></audio></td><td><audio controls src='rhythm_prompt/15.wav'></audio></td><td><audio controls src='tria_2b/15.wav'></audio></td><td><audio controls src='tria_2b_na/15.wav'></audio></td><td><audio controls src='tria_1b/15.wav'></audio></td><td><audio controls src='tria_3b/15.wav'></audio></td><td><audio controls src='tria_4b/15.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/15.wav'></audio></td><td><audio controls src='melodyflow_01/15.wav'></audio></td><td><audio controls src='melodyflow_02/15.wav'></audio></td></tr>
-<tr><td rowspan='2'>5</td><td><img src='timbre_prompt_fig/36.png'></td><td><img src='rhythm_prompt_fig/36.png'></td><td><img src='tria_2b_fig/36.png'></td><td><img src='tria_2b_na_fig/36.png'></td><td><img src='tria_1b_fig/36.png'></td><td><img src='tria_3b_fig/36.png'></td><td><img src='tria_4b_fig/36.png'></td><td>boomy, cavernous acoustic drum ambience</td><td><img src='melodyflow_00_fig/36.png'></td><td><img src='melodyflow_01_fig/36.png'></td><td><img src='melodyflow_02_fig/36.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/36.wav'></audio></td><td><audio controls src='rhythm_prompt/36.wav'></audio></td><td><audio controls src='tria_2b/36.wav'></audio></td><td><audio controls src='tria_2b_na/36.wav'></audio></td><td><audio controls src='tria_1b/36.wav'></audio></td><td><audio controls src='tria_3b/36.wav'></audio></td><td><audio controls src='tria_4b/36.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/36.wav'></audio></td><td><audio controls src='melodyflow_01/36.wav'></audio></td><td><audio controls src='melodyflow_02/36.wav'></audio></td></tr>
+<tr class='header-divider'>
+  <th>Index</th>
+  <th class="timbre-cell"><div>Timbre prompt<br><i>Use this drum sound...</i></div></th>
+  <th class="rhythm-cell"><div>Rhythm prompt<br><i>Play this rhythm...</i></div></th>
+  <th>TRIA (2 bands)</th>
+  <th>TRIA (2 bands, non-adaptive)</th>
+  <th>TRIA (1 band)</th>
+  <th>TRIA (3 bands)</th>
+  <th>TRIA (4 bands)</th>
+  <th class="left-divider timbre-cell"><div>Timbre prompt (text)<br><i>Use this drum sound...</i></div></th>
+  <th class="rhythm-cell"><div>Rhythm prompt<br><i>Play this rhythm...</i></div></th>
+  <th>MelodyFlow (timestep = 0.0)</th>
+  <th>MelodyFlow (timestep = 0.1)</th>
+  <th>MelodyFlow (timestep = 0.2)</th>
+</tr>
+
+<tr><td rowspan='2'>1</td><td class="timbre-cell"><img src='timbre_prompt_fig/43.png'></td><td class="rhythm-cell"><img src='rhythm_prompt_fig/43.png'></td><td><img src='tria_2b_fig/43.png'></td><td><img src='tria_2b_na_fig/43.png'></td><td><img src='tria_1b_fig/43.png'></td><td><img src='tria_3b_fig/43.png'></td><td><img src='tria_4b_fig/43.png'></td><td class="left-divider timbre-cell timbre-text-wide">spacious, reverberant acoustic drum set</td><td class="rhythm-cell"><img src='rhythm_prompt_fig/43.png'></td><td><img src='melodyflow_00_fig/43.png'></td><td><img src='melodyflow_01_fig/43.png'></td><td><img src='melodyflow_02_fig/43.png'></td></tr>
+<tr><td class="timbre-cell"><audio controls src='timbre_prompt/43.wav'></audio></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/43.wav'></audio></td><td><audio controls src='tria_2b/43.wav'></audio></td><td><audio controls src='tria_2b_na/43.wav'></audio></td><td><audio controls src='tria_1b/43.wav'></audio></td><td><audio controls src='tria_3b/43.wav'></audio></td><td><audio controls src='tria_4b/43.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/43.wav'></audio></td><td><audio controls src='melodyflow_00/43.wav'></audio></td><td><audio controls src='melodyflow_01/43.wav'></audio></td><td><audio controls src='melodyflow_02/43.wav'></audio></td></tr>
+
+<tr><td rowspan='2'>2</td><td class="timbre-cell"><img src='timbre_prompt_fig/70.png'></td><td class="rhythm-cell"><img src='rhythm_prompt_fig/70.png'></td><td><img src='tria_2b_fig/70.png'></td><td><img src='tria_2b_na_fig/70.png'></td><td><img src='tria_1b_fig/70.png'></td><td><img src='tria_3b_fig/70.png'></td><td><img src='tria_4b_fig/70.png'></td><td class="left-divider timbre-cell timbre-text-wide">balanced, neutral acoustic drum timbre</td><td class="rhythm-cell"><img src='rhythm_prompt_fig/70.png'></td><td><img src='melodyflow_00_fig/70.png'></td><td><img src='melodyflow_01_fig/70.png'></td><td><img src='melodyflow_02_fig/70.png'></td></tr>
+<tr><td class="timbre-cell"><audio controls src='timbre_prompt/70.wav'></audio></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/70.wav'></audio></td><td><audio controls src='tria_2b/70.wav'></audio></td><td><audio controls src='tria_2b_na/70.wav'></audio></td><td><audio controls src='tria_1b/70.wav'></audio></td><td><audio controls src='tria_3b/70.wav'></audio></td><td><audio controls src='tria_4b/70.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/70.wav'></audio></td><td><audio controls src='melodyflow_00/70.wav'></audio></td><td><audio controls src='melodyflow_01/70.wav'></audio></td><td><audio controls src='melodyflow_02/70.wav'></audio></td></tr>
+
+<tr><td rowspan='2'>3</td><td class="timbre-cell"><img src='timbre_prompt_fig/15.png'></td><td class="rhythm-cell"><img src='rhythm_prompt_fig/15.png'></td><td><img src='tria_2b_fig/15.png'></td><td><img src='tria_2b_na_fig/15.png'></td><td><img src='tria_1b_fig/15.png'></td><td><img src='tria_3b_fig/15.png'></td><td><img src='tria_4b_fig/15.png'></td><td class="left-divider timbre-cell timbre-text-wide">vibrant, digital drum sounds with fast decay</td><td class="rhythm-cell"><img src='rhythm_prompt_fig/15.png'></td><td><img src='melodyflow_00_fig/15.png'></td><td><img src='melodyflow_01_fig/15.png'></td><td><img src='melodyflow_02_fig/15.png'></td></tr>
+<tr><td class="timbre-cell"><audio controls src='timbre_prompt/15.wav'></audio></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/15.wav'></audio></td><td><audio controls src='tria_2b/15.wav'></audio></td><td><audio controls src='tria_2b_na/15.wav'></audio></td><td><audio controls src='tria_1b/15.wav'></audio></td><td><audio controls src='tria_3b/15.wav'></audio></td><td><audio controls src='tria_4b/15.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/15.wav'></audio></td><td><audio controls src='melodyflow_00/15.wav'></audio></td><td><audio controls src='melodyflow_01/15.wav'></audio></td><td><audio controls src='melodyflow_02/15.wav'></audio></td></tr>
+</table>
+
+<br/>
+<h3>Beatboxing (AVP Dataset) to Drums</h3>
+
+<table>
+<tr class='header-divider'>
+  <th>Index</th>
+  <th class="timbre-cell"><div>Timbre prompt<br><i>Use this drum sound...</i></div></th>
+  <th class="rhythm-cell"><div>Rhythm prompt<br><i>Play this rhythm...</i></div></th>
+  <th>TRIA (2 bands)</th>
+  <th>TRIA (2 bands, non-adaptive)</th>
+  <th>TRIA (1 band)</th>
+  <th>TRIA (3 bands)</th>
+  <th>TRIA (4 bands)</th>
+  <th class="left-divider timbre-cell"><div>Timbre prompt (text)<br><i>Use this drum sound...</i></div></th>
+  <th class="rhythm-cell"><div>Rhythm prompt<br><i>Play this rhythm...</i></div></th>
+  <th>MelodyFlow (timestep = 0.0)</th>
+  <th>MelodyFlow (timestep = 0.1)</th>
+  <th>MelodyFlow (timestep = 0.2)</th>
+</tr>
+
+<tr><td rowspan='2'>1</td><td class="timbre-cell"><img src='timbre_prompt_fig/320.png'></td><td class="rhythm-cell"><img src='rhythm_prompt_fig/320.png'></td><td><img src='tria_2b_fig/320.png'></td><td><img src='tria_2b_na_fig/320.png'></td><td><img src='tria_1b_fig/320.png'></td><td><img src='tria_3b_fig/320.png'></td><td><img src='tria_4b_fig/320.png'></td><td class="left-divider timbre-cell timbre-text-wide">rounded, organic electronic drums</td><td class="rhythm-cell"><img src='rhythm_prompt_fig/320.png'></td><td><img src='melodyflow_00_fig/320.png'></td><td><img src='melodyflow_01_fig/320.png'></td><td><img src='melodyflow_02_fig/320.png'></td></tr>
+<tr><td class="timbre-cell"><audio controls src='timbre_prompt/320.wav'></audio></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/320.wav'></audio></td><td><audio controls src='tria_2b/320.wav'></audio></td><td><audio controls src='tria_2b_na/320.wav'></audio></td><td><audio controls src='tria_1b/320.wav'></audio></td><td><audio controls src='tria_3b/320.wav'></audio></td><td><audio controls src='tria_4b/320.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/320.wav'></audio></td><td><audio controls src='melodyflow_00/320.wav'></audio></td><td><audio controls src='melodyflow_01/320.wav'></audio></td><td><audio controls src='melodyflow_02/320.wav'></audio></td></tr>
+
+<tr><td rowspan='2'>2</td><td class="timbre-cell"><img src='timbre_prompt_fig/296.png'></td><td class="rhythm-cell"><img src='rhythm_prompt_fig/296.png'></td><td><img src='tria_2b_fig/296.png'></td><td><img src='tria_2b_na_fig/296.png'></td><td><img src='tria_1b_fig/296.png'></td><td><img src='tria_3b_fig/296.png'></td><td><img src='tria_4b_fig/296.png'></td><td class="left-divider timbre-cell timbre-text-wide">subtle, understated acoustic drums</td><td class="rhythm-cell"><img src='rhythm_prompt_fig/296.png'></td><td><img src='melodyflow_00_fig/296.png'></td><td><img src='melodyflow_01_fig/296.png'></td><td><img src='melodyflow_02_fig/296.png'></td></tr>
+<tr><td class="timbre-cell"><audio controls src='timbre_prompt/296.wav'></audio></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/296.wav'></audio></td><td><audio controls src='tria_2b/296.wav'></audio></td><td><audio controls src='tria_2b_na/296.wav'></audio></td><td><audio controls src='tria_1b/296.wav'></audio></td><td><audio controls src='tria_3b/296.wav'></audio></td><td><audio controls src='tria_4b/296.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/296.wav'></audio></td><td><audio controls src='melodyflow_00/296.wav'></audio></td><td><audio controls src='melodyflow_01/296.wav'></audio></td><td><audio controls src='melodyflow_02/296.wav'></audio></td></tr>
+
+<tr><td rowspan='2'>3</td><td class="timbre-cell"><img src='timbre_prompt_fig/19.png'></td><td class="rhythm-cell"><img src='rhythm_prompt_fig/19.png'></td><td><img src='tria_2b_fig/19.png'></td><td><img src='tria_2b_na_fig/19.png'></td><td><img src='tria_1b_fig/19.png'></td><td><img src='tria_3b_fig/19.png'></td><td><img src='tria_4b_fig/19.png'></td><td class="left-divider timbre-cell timbre-text-wide">dense, compressed electronic drum timbres</td><td class="rhythm-cell"><img src='rhythm_prompt_fig/19.png'></td><td><img src='melodyflow_00_fig/19.png'></td><td><img src='melodyflow_01_fig/19.png'></td><td><img src='melodyflow_02_fig/19.png'></td></tr>
+<tr><td class="timbre-cell"><audio controls src='timbre_prompt/19.wav'></audio></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/19.wav'></audio></td><td><audio controls src='tria_2b/19.wav'></audio></td><td><audio controls src='tria_2b_na/19.wav'></audio></td><td><audio controls src='tria_1b/19.wav'></audio></td><td><audio controls src='tria_3b/19.wav'></audio></td><td><audio controls src='tria_4b/19.wav'></audio></td><td class="left-divider timbre-cell timbre-text-wide"></td><td class="rhythm-cell"><audio controls src='rhythm_prompt/19.wav'></audio></td><td><audio controls src='melodyflow_00/19.wav'></audio></td><td><audio controls src='melodyflow_01/19.wav'></audio></td><td><audio controls src='melodyflow_02/19.wav'></audio></td></tr>
 </table>
 
 
-<h2>Beatboxing (AVP Dataset) to Drums</h2>
-    
-<table>
-<tr class='header-divider'><th>Index</th><th>Timbre prompt</th><th>Rhythm prompt</th><th>TRIA (2 bands)</th><th>TRIA (2 bands, non-adaptive)</th><th>TRIA (1 band)</th><th>TRIA (3 bands)</th><th>TRIA (4 bands)</th><th>Timbre prompt (text)</th><th>MelodyFlow (timestep = 0.0)</th><th>MelodyFlow (timestep = 0.1)</th><th>MelodyFlow (timestep = 0.2)</th></tr>
-<tr><td rowspan='2'>1</td><td><img src='timbre_prompt_fig/320.png'></td><td><img src='rhythm_prompt_fig/320.png'></td><td><img src='tria_2b_fig/320.png'></td><td><img src='tria_2b_na_fig/320.png'></td><td><img src='tria_1b_fig/320.png'></td><td><img src='tria_3b_fig/320.png'></td><td><img src='tria_4b_fig/320.png'></td><td>rounded, organic electronic drums</td><td><img src='melodyflow_00_fig/320.png'></td><td><img src='melodyflow_01_fig/320.png'></td><td><img src='melodyflow_02_fig/320.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/320.wav'></audio></td><td><audio controls src='rhythm_prompt/320.wav'></audio></td><td><audio controls src='tria_2b/320.wav'></audio></td><td><audio controls src='tria_2b_na/320.wav'></audio></td><td><audio controls src='tria_1b/320.wav'></audio></td><td><audio controls src='tria_3b/320.wav'></audio></td><td><audio controls src='tria_4b/320.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/320.wav'></audio></td><td><audio controls src='melodyflow_01/320.wav'></audio></td><td><audio controls src='melodyflow_02/320.wav'></audio></td></tr>
-<tr><td rowspan='2'>2</td><td><img src='timbre_prompt_fig/296.png'></td><td><img src='rhythm_prompt_fig/296.png'></td><td><img src='tria_2b_fig/296.png'></td><td><img src='tria_2b_na_fig/296.png'></td><td><img src='tria_1b_fig/296.png'></td><td><img src='tria_3b_fig/296.png'></td><td><img src='tria_4b_fig/296.png'></td><td>subtle, understated acoustic drums</td><td><img src='melodyflow_00_fig/296.png'></td><td><img src='melodyflow_01_fig/296.png'></td><td><img src='melodyflow_02_fig/296.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/296.wav'></audio></td><td><audio controls src='rhythm_prompt/296.wav'></audio></td><td><audio controls src='tria_2b/296.wav'></audio></td><td><audio controls src='tria_2b_na/296.wav'></audio></td><td><audio controls src='tria_1b/296.wav'></audio></td><td><audio controls src='tria_3b/296.wav'></audio></td><td><audio controls src='tria_4b/296.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/296.wav'></audio></td><td><audio controls src='melodyflow_01/296.wav'></audio></td><td><audio controls src='melodyflow_02/296.wav'></audio></td></tr>
-<tr><td rowspan='2'>3</td><td><img src='timbre_prompt_fig/19.png'></td><td><img src='rhythm_prompt_fig/19.png'></td><td><img src='tria_2b_fig/19.png'></td><td><img src='tria_2b_na_fig/19.png'></td><td><img src='tria_1b_fig/19.png'></td><td><img src='tria_3b_fig/19.png'></td><td><img src='tria_4b_fig/19.png'></td><td>dense, compressed electronic drum timbres</td><td><img src='melodyflow_00_fig/19.png'></td><td><img src='melodyflow_01_fig/19.png'></td><td><img src='melodyflow_02_fig/19.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/19.wav'></audio></td><td><audio controls src='rhythm_prompt/19.wav'></audio></td><td><audio controls src='tria_2b/19.wav'></audio></td><td><audio controls src='tria_2b_na/19.wav'></audio></td><td><audio controls src='tria_1b/19.wav'></audio></td><td><audio controls src='tria_3b/19.wav'></audio></td><td><audio controls src='tria_4b/19.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/19.wav'></audio></td><td><audio controls src='melodyflow_01/19.wav'></audio></td><td><audio controls src='melodyflow_02/19.wav'></audio></td></tr>
-<tr><td rowspan='2'>4</td><td><img src='timbre_prompt_fig/54.png'></td><td><img src='rhythm_prompt_fig/54.png'></td><td><img src='tria_2b_fig/54.png'></td><td><img src='tria_2b_na_fig/54.png'></td><td><img src='tria_1b_fig/54.png'></td><td><img src='tria_3b_fig/54.png'></td><td><img src='tria_4b_fig/54.png'></td><td>raw, gritty analog-sounding drum machine</td><td><img src='melodyflow_00_fig/54.png'></td><td><img src='melodyflow_01_fig/54.png'></td><td><img src='melodyflow_02_fig/54.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/54.wav'></audio></td><td><audio controls src='rhythm_prompt/54.wav'></audio></td><td><audio controls src='tria_2b/54.wav'></audio></td><td><audio controls src='tria_2b_na/54.wav'></audio></td><td><audio controls src='tria_1b/54.wav'></audio></td><td><audio controls src='tria_3b/54.wav'></audio></td><td><audio controls src='tria_4b/54.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/54.wav'></audio></td><td><audio controls src='melodyflow_01/54.wav'></audio></td><td><audio controls src='melodyflow_02/54.wav'></audio></td></tr>
-<tr><td rowspan='2'>5</td><td><img src='timbre_prompt_fig/7.png'></td><td><img src='rhythm_prompt_fig/7.png'></td><td><img src='tria_2b_fig/7.png'></td><td><img src='tria_2b_na_fig/7.png'></td><td><img src='tria_1b_fig/7.png'></td><td><img src='tria_3b_fig/7.png'></td><td><img src='tria_4b_fig/7.png'></td><td>crisp, biting electronic drum samples</td><td><img src='melodyflow_00_fig/7.png'></td><td><img src='melodyflow_01_fig/7.png'></td><td><img src='melodyflow_02_fig/7.png'></td></tr>
-<tr><td><audio controls src='timbre_prompt/7.wav'></audio></td><td><audio controls src='rhythm_prompt/7.wav'></audio></td><td><audio controls src='tria_2b/7.wav'></audio></td><td><audio controls src='tria_2b_na/7.wav'></audio></td><td><audio controls src='tria_1b/7.wav'></audio></td><td><audio controls src='tria_3b/7.wav'></audio></td><td><audio controls src='tria_4b/7.wav'></audio></td><td></td><td><audio controls src='melodyflow_00/7.wav'></audio></td><td><audio controls src='melodyflow_01/7.wav'></audio></td><td><audio controls src='melodyflow_02/7.wav'></audio></td></tr>
-</table>
 
 
-
+<br/>
 <h2>Text Timbre Prompts</h2>
 
 
