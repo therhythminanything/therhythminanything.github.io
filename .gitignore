@@ -7,3 +7,16 @@ __pycache__/
 *.egg-info/
 .pytest_cache
 *.ipynb_checkpoints/
+_site/
+*.egg-info/
+.empty/
+*.ipynb_checkpoints
+.ipynb_checkpoints/
+.pytest_cache/
+.vscode/
+__pycache__/
+build/
+dist/
+.DS_Store
+._.DS_Store
+**/..git/*
